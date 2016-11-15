@@ -1,29 +1,42 @@
 package demoProject;
 
-public class ProovClass {
+import java.util.ArrayList;
+import java.util.List;
 
+public class ProovClass {
 	public static void main(String[] args) {
 		MyJSONObject obj = new MyJSONObject();
 		obj.put("name", "Kalle");
 		obj.put("age", 56);
-
-		String jsonString = obj.JSONString();
-
-		Person kalle = obj.toJavaObject();
-		}
-
+		obj.put("isActive", false);
+		
+		String jsonString = obj.JSONString(); // { "name" : "Kalle", "age" : 56 }
+//		Person kalle = obj.toJavaObject();
+		
+	}
 }
 
 class MyJSONObject {
-
-	public void put(String string, int i) {
-		// TODO Auto-generated method stub
-
+    
+	private List<Object> keyList = new ArrayList<>();
+	private List<Object> valueList = new ArrayList<>();
+	public void put(String key, Object value) {
+		keyList.add(key);
+		valueList.add(value);
 	}
 
-	public void put(String string, String string2) {
-		// TODO Auto-generated method stub
 
+	public Person toJavaObject() {
+		// TODO Auto-generated method stub
+		return null;
 	}
+
+	public String JSONString() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+}
+
+class Person {
 
 }
